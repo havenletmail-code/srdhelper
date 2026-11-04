@@ -111,7 +111,7 @@ function Index() {
         <Button variant="service" className={stage === "initial" ? "initial-submit" : ""} type="submit" disabled={Boolean(pendingStage) || (stage === "initial" ? !ready : !canConfirm)}>{stage === "initial" ? "Submit" : "Confirm"}</Button>
       </form>
     </main>}
-    {pendingStage && <div className="loading-overlay" role="status" aria-live="polite" aria-label={pendingStage === "success" ? "Confirming¦" : "Loading¦"}><div className="loading-indicator"><span className="loading-spinner" aria-hidden="true" /><span>{pendingStage === "success" ? "Confirming¦" : "Loading¦"}</span></div></div>}
+    {pendingStage && <div className="loading-overlay" role="status" aria-live="polite" aria-label={pendingStage === "success" ? "Confirming" : "Loading"}><div className="loading-indicator"><span className="loading-spinner" aria-hidden="true" /><span>{pendingStage === "success" ? "Confirming" : "Loading"}</span></div></div>}
 </div>}
 
 
