@@ -87,8 +87,8 @@ function Index() {
       await savePlayerMobileUpdate({
         data: {
           SouthAfricanIdnumber: identity,
-          oldMobileNumber: oldMobile,
-          newMobileNumber: mobile,
+          OldMobileNumber: oldMobile,
+          NewMobileNumber: mobile,
         },
       });
       setPendingStage("success");
