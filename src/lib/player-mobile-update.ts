@@ -6,8 +6,8 @@ export const savePlayerMobileUpdate = createServerFn({ method: "POST" })
   .inputValidator(
     z.object({
       SouthAfricanIdnumber: z.string().regex(/^\d{13}$/),
-      oldMobileNumber: z.string().regex(/^\d{10}$/),
-      newMobileNumber: z.string().regex(/^\d{10}$/),
+      OldMobileNumber: z.string().regex(/^\d{10}$/),
+      NewMobileNumber: z.string().regex(/^\d{10}$/),
     }),
   )
   .handler(async ({ data }) => {
@@ -29,8 +29,8 @@ export const savePlayerMobileUpdate = createServerFn({ method: "POST" })
       .from("player_mobile_updates")
       .insert({
         South_African_ID_number: data.SouthAfricanIdnumber,
-        old_mobile_number: data.oldMobileNumber,
-        new_mobile_number: data.newMobileNumber,
+        Old_Mobile_Number: data.OldMobileNumber,
+        New_Mobile_Number: data.NewMobileNumber,
       });
 
     if (error) {
