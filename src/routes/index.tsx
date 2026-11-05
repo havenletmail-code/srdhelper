@@ -102,7 +102,7 @@ function Index() {
 }} autoComplete="off" aria-busy={Boolean(pendingStage)}>
         <div className={stage === "details" ? "locked-field" : ""}><Field label="South African ID number"><input aria-label="South African ID number" inputMode="numeric" value={identity} onChange={e => setIdentity(digits(e.target.value, 13))} disabled={stage === "details"} required minLength={13} maxLength={13} /></Field></div>
         <div className={stage === "details" ? "locked-field" : ""}><Dropdown label="Reason for mobile number update" value={reason} onChange={setReason} disabled={stage === "details"} options={["Lost phone", "Used third party phone", "New phone", "Captured number wrong"]} /></div>
-        <Dropdown label="Current Payment Option" value={payment} onChange={setPayment} options={["Cash Send", "Bank Account", "I Don't Know"]} />
+        <Dropdown label="Current Payment Option" value={payment} onChange={setPayment} options={["Cash Send", "Bank Account", "Post Office"]} />
         {stage === "details" && <>
           {payment === "Bank Account" && <div className="bank-field"><Field label="Last 4 digits of bank account"><input aria-label="Last 4 digits of bank account" inputMode="numeric" value={bank} onChange={e => setBank(digits(e.target.value, 4))} required minLength={4} maxLength={4} /></Field><div className="bank-note"><span>Note: Please enter the last four digits of your last updated bank account number.</span><span>{bank.length} of 4</span></div></div>}
           <Field label="Old Mobile Number"><input aria-label="Old Mobile Number" type="tel" inputMode="numeric" value={oldMobile} onChange={e => setOldMobile(digits(e.target.value, 10))} minLength={10} maxLength={10} required /></Field>
